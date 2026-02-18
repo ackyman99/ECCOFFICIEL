@@ -1,0 +1,20 @@
+[
+  {
+    "book": "Jean",
+    "chapters": [
+      {
+        "chapter": 3,
+        "verses": [
+          {
+            "verse": 16,
+            "text": "Car Dieu a tant aimé le monde..."
+          },
+          {
+            "verse": 17,
+            "text": "Dieu a envoyé son Fils..."
+          }
+        ]
+      }
+    ]
+  }
+]
