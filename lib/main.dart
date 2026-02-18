@@ -30,7 +30,8 @@ class _MyAppState extends State<MyApp> {
   }
 
   // This widget is the root of your application.
-  @override
+  @override 
+  // bienvenu
   Widget build(BuildContext context) {
     const bool useEventEntry = bool.fromEnvironment('ENTRY_EVENT', defaultValue: false);
     return MaterialApp(
