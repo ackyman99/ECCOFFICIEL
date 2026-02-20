@@ -80,6 +80,7 @@ flutter:
     - assets/data/lectures.json
     - assets/data/segond_1910.json
     - assets/data/event.json
+    - assets/data/histoireFondation_reorganise.json
     - assets/images/
     - assets/videos/
   #   - images/a_dot_ham.jpeg

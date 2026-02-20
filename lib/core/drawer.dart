@@ -1,4 +1,5 @@
 import 'package:eccofficiel/theme.dart';
+import 'package:eccofficiel/screens/Histoire/histoireFondation.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -48,7 +49,22 @@ class Navbar extends StatelessWidget {
               icon: Iconsax.profile_circle,
               title: 'Profil',
             ),
-          )
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const HistoireFondationPage(),
+                ),
+              );
+            },
+            child: _settingItem(
+              icon: Iconsax.document,
+              title: 'Histoire de la Fondation',
+            ),
+          ),
 
         ],
       ),
