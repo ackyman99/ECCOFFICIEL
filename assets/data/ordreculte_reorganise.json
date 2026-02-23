@@ -1,0 +1,126 @@
+{
+  "title": "Formes et ordre du culte",
+  "language": "fr",
+  "sections": [
+    {
+      "title": "Formes du culte",
+      "ref": "94",
+      "text": "Toutes les formes d’adoration dans l’Église du Christianisme Céleste sont établies telles qu’elles ont été révélées par le Saint-Esprit, y compris la disposition de l’autel et des sièges. Cette disposition fut révélée par une visionnaire inspirée du Saint-Esprit, qui en fit la démonstration le vendredi 5 octobre 1947 dans la brousse."
+    },
+    {
+      "title": "Ordre du culte",
+      "ref": "95-96",
+      "text": "Un ordre de culte a été établi pour les différentes occasions (mariage, funérailles, messe de requiem, etc.). Comme révélé par le Saint-Esprit, cet ordre est disponible au Siège Suprême de Porto-Novo, au Siège National/Diocésain du Nigeria à Makoko (Lagos) et dans de nombreuses paroisses.",
+      "saintsNames": [
+        { "name": "EH YIBAH", "meaning": "Dieu miséricordieux" },
+        { "name": "ELI YAH", "meaning": "Éternel Dieu" },
+        { "name": "ELI BAMAH YABAH", "meaning": "" },
+        { "name": "OLUWA ALANU", "meaning": "" },
+        { "name": "OLUWA OLORUN", "meaning": "" },
+        { "name": "OLUWA OMO EMI MICHAEL", "meaning": "" },
+        { "name": "JEHOVAH, JESUS CHRIST, ST MICHEL", "meaning": "" },
+        { "name": "OBA OLUSEGUN", "meaning": "Dieu Roi de victoire" },
+        { "name": "AGASHADUAL", "meaning": "" },
+        { "name": "JEHOVAH JECHO HIRAMI", "meaning": "Dieu Roi de bénédictions" },
+        { "name": "OBA OLUBUKUN", "meaning": "" }
+      ]
+    },
+    {
+      "title": "Annonces et prédication",
+      "ref": "97-98",
+      "text": "Les annonces pendant le culte sont faites par le Secrétaire paroissial sur des sujets concernant l’Église, la paroisse et ses programmes, conformément à la doctrine. La prédication est faite par un ancien désigné par le Chargé paroissial et doit suivre les directives ci-dessous.",
+      "items": [
+        "La prédication doit être inspirée des textes bibliques programmés ce jour-là ; le respect du texte biblique est un principe absolu.",
+        "Toute référence à des publications de presse ou d’ordre politique, ou pouvant être jugée hostile/désobligeante envers d’autres organisations religieuses, est interdite."
+      ]
+    },
+    {
+      "title": "Rites et sacrements",
+      "ref": "99",
+      "text": "L’adoration comporte plusieurs rites saints et sacrements d’importance primordiale auxquels les fidèles doivent participer.",
+      "rites": [
+        {
+          "code": "A",
+          "title": "Baptême",
+          "text": "Le baptême se fait par immersion. Avant d’être accepté comme membre, on doit être baptisé (ou rebaptisé) au nom du Seigneur Jésus-Christ, selon la foi de l’Église (cf. Actes 19:1‑6)."
+        },
+        {
+          "code": "B",
+          "title": "Sainte Communion",
+          "text": "La Sainte Cène est généralement effectuée tous les trois mois, le Jeudi Saint et le jour de Noël sur la plage de Porto‑Novo. Elle peut aussi être célébrée pour des occasions spéciales (mariage, funérailles, messe en souvenir des défunts)."
+        },
+        {
+          "code": "C",
+          "title": "Lavement annuel des pieds",
+          "text": "Effectué le Jeudi de la Semaine Sainte, en commémoration du lavement des pieds par le Seigneur Jésus-Christ (Jean 13:5‑9). Les représentants se rassemblent à Makoko le samedi précédant le Dimanche des Rameaux, puis accomplissent le lavement le Jeudi Saint dans leurs paroisses."
+        },
+        {
+          "code": "D",
+          "title": "Convocation annuelle à Porto‑Novo (veille de Noël)",
+          "text": "Tous les membres, où qu’ils soient, sont convoqués au bord de la mer à Porto‑Novo pour Noël, en mémoire de la naissance de Jésus‑Christ (Luc 2:1)."
+        },
+        {
+          "code": "E",
+          "title": "Assemblée annuelle de Pâques à Makoko",
+          "text": "Assemblée de tous les membres du diocèse du Nigeria à Makoko, du Vendredi Saint jusqu’au Dimanche de Pâques, avec trois cultes le Vendredi Saint (9h, 12h, 15h), une procession vers le cimetière le samedi soir (culte à minuit en face du cimetière), et un culte de joie le Dimanche."
+        },
+        {
+          "code": "F",
+          "title": "Culte d’action de grâce pour la Fête des Moissons",
+          "text": "Chaque paroisse célèbre annuellement la Moisson: Moissons juvéniles le 1er dimanche de juin ; Moissons des adultes à une date fixée par le Comité paroissial, en coordination avec Makoko. Aucune paroisse ne doit choisir les dates réservées au Siège Suprême (1er dimanche d’octobre) ou au Siège diocésain (1er dimanche d’août)."
+        },
+        {
+          "code": "G",
+          "title": "Saint Jour de Marie",
+          "text": "En commémoration de l’apparition de la Sainte Vierge Marie au Prophète Pasteur Fondateur le 15 juillet 1977. Le premier vendredi du mois de juillet est décrété Saint Jour de Marie, célébré par un grand culte dans toutes les paroisses."
+        }
+      ]
+    },
+    {
+      "title": "Publications de l’Église",
+      "ref": "100",
+      "text": "Le Conseil Pastoral est responsable des publications: Évangile quotidien, almanachs, livres de cantiques, calendriers, périodiques et toute autre publication relative aux activités de l’Église."
+    },
+    {
+      "title": "Adhésion",
+      "ref": "101-106",
+      "text": "Sont bienvenues toutes les personnes qui désirent être sauvées en acceptant Jésus‑Christ comme Fils unique de Dieu et Sauveur, et qui adoptent les devoirs et privilèges de la communauté. Le baptême au nom de Jésus‑Christ dans l’Église est requis.",
+      "conditions": [
+        "Renoncer à toute société secrète ou fraternité.",
+        "Renoncer à l’adoration des idoles, fétiches ou sorcellerie.",
+        "Refuser d’adorer Satan et de participer aux puissances des ténèbres.",
+        "Renoncer à tout titre/position/association en contradiction avec ces injonctions (ex.: chefferie).",
+        "Déclarer rester Chrétien Céleste jusqu’à la mort et être inhumé selon la doctrine et les rites de l’Église.",
+        "Signer une déclaration d’adhésion résumant ces engagements (cf. Exode 20:3)."
+      ]
+    },
+    {
+      "title": "Solennité des cultes",
+      "ref": "106",
+      "text": "Pendant les cultes, une stricte solennité et attention sont exigées. Toute attitude troublant cette solennité (bavardage, échanges d’objets/argent) est proscrite."
+    },
+    {
+      "title": "Structures de l’Église",
+      "ref": "107+",
+      "text": "Définitions organisationnelles utilisées dans la Constitution.",
+      "definitions": [
+        {
+          "code": "A",
+          "text": "Siège International: Église mondiale ; Siège Suprême à Porto‑Novo (lieu de naissance). Siège International: Mission House, Ketu, Lagos (Nigeria)."
+        },
+        {
+          "code": "B",
+          "text": "Diocèse: Église au Nigeria ; Siège National/Diocésain: 12‑15 Church Street, Makoko, Yaba, Lagos. Inclut pour l’instant des paroisses à l’extérieur administrées depuis le Nigeria."
+        },
+        {
+          "code": "C",
+          "text": "District: Regroupement d’un nombre limité de paroisses, administré par des représentants du pasteur (Assistant Évangéliste et plus). Administration des rites réservés aux rangs adéquats."
+        },
+        {
+          "code": "D",
+          "text": "Paroisse: Congrégation individuelle au sein du diocèse (ex.: Badagry, Yemetu, Oke‑Ado, Harton Street, etc.)."
+        }
+      ]
+    }
+  ]
+}

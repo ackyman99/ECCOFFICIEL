@@ -81,6 +81,10 @@ flutter:
     - assets/data/segond_1910.json
     - assets/data/event.json
     - assets/data/histoireFondation_reorganise.json
+    - assets/data/doctrineetformeculte_reorganise.json
+    - assets/data/ordreculte_reorganise.json
+    - assets/data/administration_reorganise.json
+    - assets/data/evenementeglise_reorganise.json
     - assets/images/
     - assets/videos/
   #   - images/a_dot_ham.jpeg

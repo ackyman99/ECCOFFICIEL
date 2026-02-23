@@ -1,5 +1,10 @@
 import 'package:eccofficiel/theme.dart';
 import 'package:eccofficiel/screens/Histoire/histoireFondation.dart';
+import 'package:eccofficiel/screens/Doctrine/doctrineetformeculte.dart';
+import 'package:eccofficiel/screens/Ordre/ordreculte.dart';
+import 'package:eccofficiel/screens/Administration/administration.dart';
+import 'package:eccofficiel/screens/Evenement/evenementeglise.dart';
+import 'package:eccofficiel/screens/Profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -44,9 +49,15 @@ class Navbar extends StatelessWidget {
            GestureDetector(
             onTap: () {
               Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const ProfilePage(),
+                ),
+              );
             },
             child: _settingItem(
-              icon: Iconsax.profile_circle,
+              icon: Iconsax.user,
               title: 'Profil',
             ),
           ),
@@ -65,6 +76,67 @@ class Navbar extends StatelessWidget {
               title: 'Histoire de la Fondation',
             ),
           ),
+          GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const DoctrineEtFormeCultePage(),
+                ),
+              );
+            },
+            child: _settingItem(
+              icon: Iconsax.book,
+              title: 'Doctrine et forme du culte',
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const OrdreCultePage(),
+                ),
+              );
+            },
+            child: _settingItem(
+              icon: Iconsax.book_saved,
+              title: 'Ordre du culte',
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const AdministrationPage(),
+                ),
+              );
+            },
+            child: _settingItem(
+              icon: Iconsax.document_text,
+              title: 'Administration',
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const EvenementEglisePage(),
+                ),
+              );
+            },
+            child: _settingItem(
+              icon: Iconsax.calendar_1,
+              title: 'Événements de l’Église',
+            ),
+          ),
+         
 
         ],
       ),
