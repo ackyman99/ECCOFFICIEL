@@ -10,9 +10,7 @@ class EvenementEglisePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
         title: const Text('Événements de l’Église'),
         centerTitle: true,
       ),

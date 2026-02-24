@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:eccofficiel/theme.dart';
+import 'package:provider/provider.dart';
+import 'package:eccofficiel/core/theme_controller.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -8,9 +10,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
         title: const Text('Profil'),
         centerTitle: true,
       ),
@@ -80,7 +80,58 @@ class ProfilePage extends StatelessWidget {
                   leading: const Icon(Iconsax.setting_2),
                   title: const Text('Paramètres'),
                   trailing: const Icon(Iconsax.arrow_right_3),
-                  onTap: () {},
+                  onTap: () {
+                    showModalBottomSheet(
+                      context: context,
+                      showDragHandle: true,
+                      builder: (ctx) {
+                        final ctrl = ctx.read<ThemeController>();
+                        ThemeMode current = ctx.watch<ThemeController>().themeMode;
+                        void select(ThemeMode mode) {
+                          ctrl.setThemeMode(mode);
+                          Navigator.pop(ctx);
+                        }
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.symmetric(vertical: 8.0),
+                                child: Text(
+                                  'Apparence',
+                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+                                ),
+                              ),
+                              RadioListTile<ThemeMode>(
+                                value: ThemeMode.system,
+                                groupValue: current,
+                                onChanged: (_) => select(ThemeMode.system),
+                                title: const Text('Système'),
+                                secondary: const Icon(Icons.brightness_auto_outlined),
+                              ),
+                              RadioListTile<ThemeMode>(
+                                value: ThemeMode.light,
+                                groupValue: current,
+                                onChanged: (_) => select(ThemeMode.light),
+                                title: const Text('Jour'),
+                                secondary: const Icon(Icons.light_mode_outlined),
+                              ),
+                              RadioListTile<ThemeMode>(
+                                value: ThemeMode.dark,
+                                groupValue: current,
+                                onChanged: (_) => select(ThemeMode.dark),
+                                title: const Text('Nuit'),
+                                secondary: const Icon(Icons.dark_mode_outlined),
+                              ),
+                              const SizedBox(height: 8),
+                            ],
+                          ),
+                        );
+                      },
+                    );
+                  },
                 ),
                 const Divider(height: 0),
                 ListTile(

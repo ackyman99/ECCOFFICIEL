@@ -5,12 +5,20 @@ import 'package:eccofficiel/screens/Programme/event/services/event_service.dart'
 import 'package:eccofficiel/screens/Programme/Carte/carte.dart';
 import 'package:eccofficiel/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:eccofficiel/core/theme_controller.dart';
+import 'package:eccofficiel/core/app_theme.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupLocalTimezone();
   final bibleRepo = BibleRepository();
   await bibleRepo.init();
-  runApp(MyApp(repo: bibleRepo));
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => ThemeController()..load(),
+      child: MyApp(repo: bibleRepo),
+    ),
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -34,50 +42,18 @@ class _MyAppState extends State<MyApp> {
   // bienvenu
   Widget build(BuildContext context) {
     const bool useEventEntry = bool.fromEnvironment('ENTRY_EVENT', defaultValue: false);
+    final themeCtrl = context.watch<ThemeController>();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'ECC',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        pageTransitionsTheme: const PageTransitionsTheme(
-          builders: {
-            TargetPlatform.android: FadeSlideTransitionsBuilder(),
-            TargetPlatform.iOS: FadeSlideTransitionsBuilder(),
-            TargetPlatform.windows: FadeSlideTransitionsBuilder(),
-            TargetPlatform.macOS: FadeSlideTransitionsBuilder(),
-            TargetPlatform.linux: FadeSlideTransitionsBuilder(),
-          },
-        ),
-      ),
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      themeMode: themeCtrl.themeMode,
       routes: {
         '/carte': (_) => const CarteScreen(),
       },
       home: useEventEntry ? const EventScreen() : HomePage(repo: widget.repo),
     );
   } 
-}
-
-class FadeSlideTransitionsBuilder extends PageTransitionsBuilder {
-  const FadeSlideTransitionsBuilder();
-  @override
-  Widget buildTransitions<T>(
-    PageRoute<T> route,
-    BuildContext context,
-    Animation<double> animation,
-    Animation<double> secondaryAnimation,
-    Widget child,
-  ) {
-    final curved = CurvedAnimation(
-      parent: animation,
-      curve: Curves.easeOutCubic,
-      reverseCurve: Curves.easeInCubic,
-    );
-    final fade = Tween<double>(begin: 0.0, end: 1.0).animate(curved);
-    final slide = Tween<Offset>(begin: const Offset(0, 0.04), end: Offset.zero).animate(curved);
-    return FadeTransition(
-      opacity: fade,
-      child: SlideTransition(position: slide, child: child),
-    );
-  }
 }
 
