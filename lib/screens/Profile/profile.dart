@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:eccofficiel/theme.dart';
 import 'package:provider/provider.dart';
 import 'package:eccofficiel/core/theme_controller.dart';
 
@@ -22,8 +21,8 @@ class ProfilePage extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 42,
-                  backgroundColor: Colors.blueGrey.shade100,
-                  child: const Icon(Iconsax.user, size: 44, color: Colors.black54),
+                  backgroundColor: Theme.of(context).colorScheme.surfaceVariant,
+                  child: Icon(Iconsax.user, size: 44, color: Theme.of(context).colorScheme.onSurfaceVariant),
                 ),
                 const SizedBox(height: 12),
                 const Text(
@@ -31,17 +30,12 @@ class ProfilePage extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
                 ),
                 const SizedBox(height: 4),
-                Text(
-                  'Membre',
-                  style: TextStyle(color: textGrey),
-                ),
+                Text('Membre', style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant)),
               ],
             ),
           ),
           const SizedBox(height: 24),
           Card(
-            elevation: 0,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
             child: Column(
               children: const [
                 ListTile(
@@ -72,8 +66,6 @@ class ProfilePage extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           Card(
-            elevation: 0,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
             child: Column(
               children: [
                 ListTile(

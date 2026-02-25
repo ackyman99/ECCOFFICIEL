@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:eccofficiel/theme.dart';
 
 class _Transitions {
   static const page = PageTransitionsTheme(
@@ -13,10 +14,41 @@ class _Transitions {
 }
 
 final ThemeData lightTheme = ThemeData(
-  colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple, brightness: Brightness.light),
+  colorScheme: ColorScheme.fromSeed(seedColor: bleuclair, brightness: Brightness.light),
   useMaterial3: true,
   scaffoldBackgroundColor: Colors.white,
   pageTransitionsTheme: _Transitions.page,
+  cardTheme:  CardThemeData(
+    color: Colors.white,
+    elevation: 0,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+
+  ),
+  listTileTheme: const ListTileThemeData(
+    contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 2),
+    minLeadingWidth: 24,
+    horizontalTitleGap: 12,
+  ),
+  dividerTheme: const DividerThemeData(
+    thickness: 1,
+    space: 16,
+  ),
+  inputDecorationTheme: InputDecorationTheme(
+    border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+    filled: true,
+    isDense: true,
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+    ),
+  ),
+  chipTheme: ChipThemeData(
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+    labelStyle: const TextStyle(fontWeight: FontWeight.w600),
+    side: BorderSide.none,
+  ),
   appBarTheme: const AppBarTheme(
     surfaceTintColor: Colors.transparent,
     backgroundColor: Colors.white,
@@ -26,10 +58,40 @@ final ThemeData lightTheme = ThemeData(
 );
 
 final ThemeData darkTheme = ThemeData(
-  colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple, brightness: Brightness.dark),
+  colorScheme: ColorScheme.fromSeed(seedColor: bleuclair, brightness: Brightness.dark),
   useMaterial3: true,
   scaffoldBackgroundColor: const Color(0xFF121212),
   pageTransitionsTheme: _Transitions.page,
+  cardTheme:  CardThemeData(
+    color: const Color(0xFF1E1E1E),
+    elevation: 0,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+  ),
+  listTileTheme: const ListTileThemeData(
+    contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 2),
+    minLeadingWidth: 24,
+    horizontalTitleGap: 12,
+  ),
+  dividerTheme: const DividerThemeData(
+    thickness: 1,
+    space: 16,
+  ),
+  inputDecorationTheme: InputDecorationTheme(
+    border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+    filled: true,
+    isDense: true,
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+    ),
+  ),
+  chipTheme: ChipThemeData(
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+    labelStyle: const TextStyle(fontWeight: FontWeight.w600),
+    side: BorderSide.none,
+  ),
   appBarTheme: const AppBarTheme(
     surfaceTintColor: Colors.transparent,
     backgroundColor: Color(0xFF1E1E1E),

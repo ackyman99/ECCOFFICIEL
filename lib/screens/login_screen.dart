@@ -57,7 +57,6 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.white,
       body: SafeArea(
         child:Container(
         decoration: BoxDecoration(
@@ -92,21 +91,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 48,
               ),
 
-              Container(
+              Card(
                   margin: const EdgeInsets.all(2),
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                                BoxShadow(
-                                    // ignore: deprecated_member_use
-                                    color: Colors.black.withOpacity(0.10),
-                                    spreadRadius: 0.0,
-                                    blurRadius: 20.0,
-                                    offset:const Offset(0, 4))
-                              ],
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10.0)),
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
                       Form(
@@ -117,7 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     alignment: Alignment.topLeft,
                     child: Text(
                       "Nom d'utilisateur",
-                      style: TextStyle(fontSize: 10, color: textGrey),
+                      style: TextStyle(fontSize: 10, color: Theme.of(context).colorScheme.onSurfaceVariant),
                     ),
                   ),
                     InputField(
@@ -133,7 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     alignment: Alignment.topLeft,
                     child: Text(
                       "Mot de passe",
-                      style: TextStyle(fontSize: 10, color: textGrey),
+                      style: TextStyle(fontSize: 10, color: Theme.of(context).colorScheme.onSurfaceVariant),
                     ),
                   ),
                     
@@ -142,7 +131,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       controller: passwordController,
                       obscureText: !passwordVisible,
                       suffixIcon: IconButton(
-                        color: textGrey,
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
                         splashRadius: 1,
                         icon: Icon(passwordVisible
                             ? Icons.visibility_outlined
@@ -168,11 +157,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     child: Container(
                       decoration: BoxDecoration(
-                        color: isChecked ? primaryBlue : Colors.transparent,
+                        color: isChecked ? Theme.of(context).colorScheme.primary : Colors.transparent,
                         borderRadius: BorderRadius.circular(4.0),
                         border: isChecked
                             ? null
-                            : Border.all(color: textGrey, width: 1.5),
+                            : Border.all(color: Theme.of(context).colorScheme.outlineVariant, width: 1.5),
                       ),
                       width: 20,
                       height: 20,
@@ -193,7 +182,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       Text(
                         'Rester connecté',
-                        style: regular16pt.copyWith(color: textGrey),
+                        style: regular16pt.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant),
                       ),
                     ],
                   ),
@@ -204,7 +193,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 32,
               ),
                CustomPrimaryButton(
-                    buttonColor: primaryBlue,
+                    buttonColor: Theme.of(context).colorScheme.primary,
                     textValue: 'Conexion',
                     textColor: Colors.white,
                     onPressed: () {
@@ -229,19 +218,20 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     child:  Text(
                     "Mot de passe oublié? ",
-                    style: regular16pt.copyWith(color: textGrey),
+                    style: regular16pt.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant),
                   ),
                   ),
                 ],
               ),
                      ],
-                  )),
+                  ),
+                  ),
               
              
              
               
               
-            ],
+          )],
           ),
         ),
       ),

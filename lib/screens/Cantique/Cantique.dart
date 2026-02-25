@@ -19,7 +19,6 @@ class _cantiqueState extends State<cantique> {
         length: 2,
         child: Scaffold(
                   //  appBar: appBar(),
-            backgroundColor: Colors.white,
             body: Column(
               children: [
                 Padding(

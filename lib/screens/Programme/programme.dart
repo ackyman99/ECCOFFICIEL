@@ -17,7 +17,6 @@ class _ProgrammeState extends State<Programme> {
         length: 2,
         child: Scaffold(
                   //  appBar: appBar(),
-            backgroundColor: Colors.white,
             body: Column(
               children: [
                 Padding(

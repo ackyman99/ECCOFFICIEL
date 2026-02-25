@@ -7,25 +7,25 @@ import 'package:eccofficiel/screens/Evenement/evenementeglise.dart';
 import 'package:eccofficiel/screens/Profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:provider/provider.dart';
+import 'package:eccofficiel/core/theme_controller.dart';
 
 class Navbar extends StatelessWidget {
   const Navbar({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final themeCtrl = context.watch<ThemeController>();
+    final mode = themeCtrl.themeMode;
     return Drawer(
-      backgroundColor: const Color(0xFFFFFFFF),
       elevation: 16,
       shape: const Border(),
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: const Text("Dorgeles Ackyman", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
-            accountEmail: const Text(
-              'dorgelesackyman@gmail.com',
-              style: TextStyle(color: Colors.grey),
-            ),
+            accountName: const Text("Dorgeles Ackyman"),
+            accountEmail: const Text('dorgelesackyman@gmail.com'),
             currentAccountPicture: CircleAvatar(
               radius: 100,
               child: ClipOval(child: Image.asset('assets/images/background2.png', gaplessPlayback: true)),
@@ -37,11 +37,18 @@ class Navbar extends StatelessWidget {
               ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 6, 16, 10),
+            child: Text(
+              'Navigation',
+              style: Theme.of(context).textTheme.labelLarge?.copyWith(fontWeight: FontWeight.w700),
+            ),
+          ),
           GestureDetector(
             onTap: () {
               Navigator.pop(context);
             },
-            child: _settingItem(
+            child: _settingItem(context,
               icon: Iconsax.home,
               title: 'Accueil',
             ),
@@ -56,7 +63,7 @@ class Navbar extends StatelessWidget {
                 ),
               );
             },
-            child: _settingItem(
+            child: _settingItem(context,
               icon: Iconsax.user,
               title: 'Profil',
             ),
@@ -71,7 +78,7 @@ class Navbar extends StatelessWidget {
                 ),
               );
             },
-            child: _settingItem(
+            child: _settingItem(context,
               icon: Iconsax.document,
               title: 'Histoire de la Fondation',
             ),
@@ -86,7 +93,7 @@ class Navbar extends StatelessWidget {
                 ),
               );
             },
-            child: _settingItem(
+            child: _settingItem(context,
               icon: Iconsax.book,
               title: 'Doctrine et forme du culte',
             ),
@@ -101,7 +108,7 @@ class Navbar extends StatelessWidget {
                 ),
               );
             },
-            child: _settingItem(
+            child: _settingItem(context,
               icon: Iconsax.book_saved,
               title: 'Ordre du culte',
             ),
@@ -116,7 +123,7 @@ class Navbar extends StatelessWidget {
                 ),
               );
             },
-            child: _settingItem(
+            child: _settingItem(context,
               icon: Iconsax.document_text,
               title: 'Administration',
             ),
@@ -131,31 +138,66 @@ class Navbar extends StatelessWidget {
                 ),
               );
             },
-            child: _settingItem(
+            child: _settingItem(context,
               icon: Iconsax.calendar_1,
               title: 'Événements de l’Église',
             ),
           ),
-         
+          const SizedBox(height: 8),
+          const Divider(),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 6, 16, 6),
+            child: Text(
+              'Réglages',
+              style: Theme.of(context).textTheme.labelLarge?.copyWith(fontWeight: FontWeight.w700),
+            ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.brightness_auto_outlined),
+            title: const Text('Apparence'),
+            subtitle: Text(
+              switch (mode) {
+                ThemeMode.light => 'Jour',
+                ThemeMode.dark => 'Nuit',
+                ThemeMode.system => 'Système',
+              },
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+            trailing: PopupMenuButton<ThemeMode>(
+              icon: const Icon(Iconsax.arrow_down_1),
+              onSelected: (m) => themeCtrl.setThemeMode(m),
+              itemBuilder: (ctx) => [
+                const PopupMenuItem(value: ThemeMode.system, child: Text('Système')),
+                const PopupMenuItem(value: ThemeMode.light, child: Text('Jour')),
+                const PopupMenuItem(value: ThemeMode.dark, child: Text('Nuit')),
+              ],
+            ),
+            onTap: () {},
+          ),
 
         ],
       ),
     );
   }
 
-    static Widget _settingItem({
+    static Widget _settingItem(BuildContext context, {
     required IconData icon,
     required String title,
   }) {
+    final cs = Theme.of(context).colorScheme;
+    final bg = cs.surface;
+    final icoBg = cs.primary.withOpacity(0.12);
+    final ico = cs.primary;
+    final txt = cs.primary;
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: bg,
         borderRadius: BorderRadius.circular(14),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Theme.of(context).shadowColor.withOpacity(0.06),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -166,9 +208,10 @@ class Navbar extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
- color: const Color.fromARGB(92, 57, 169, 243),              borderRadius: BorderRadius.circular(10),
+              color: icoBg,
+              borderRadius: BorderRadius.circular(10),
             ),
-            child: Icon(icon, color: const Color.fromARGB(255, 7, 131, 232)),
+            child: Icon(icon, color: ico),
           ),
           const SizedBox(width: 14),
           Expanded(
@@ -180,7 +223,6 @@ class Navbar extends StatelessWidget {
                   style: const TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 14,
-                    color: bleuclair
                   ),
                 ),
                 const SizedBox(height: 4),
@@ -188,11 +230,11 @@ class Navbar extends StatelessWidget {
               ],
             ),
           ),
-          const Icon(
-                  Iconsax.arrow_circle_right5,
-                  size: 20,
-                  color: bleuclair,
-                ),
+          Icon(
+            Iconsax.arrow_circle_right5,
+            size: 20,
+            color: txt,
+          ),
         ],
       ),
     );

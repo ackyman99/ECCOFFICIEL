@@ -92,7 +92,6 @@ class _texteState extends State<texte> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Column(
         children: [
           Padding(
@@ -120,9 +119,11 @@ class _texteState extends State<texte> {
                     child: ChoiceChip(
                       label: const Text('Tous'),
                       selected: _selectedType == null,
-                      selectedColor: orange,
+                      selectedColor: Theme.of(context).colorScheme.primary,
                       labelStyle: TextStyle(
-                        color: _selectedType == null ? Colors.white : Colors.black87,
+                        color: _selectedType == null
+                            ? Theme.of(context).colorScheme.onPrimary
+                            : Theme.of(context).colorScheme.onSurface,
                       ),
                       onSelected: (sel) {
                         _selectedType = null;
@@ -136,9 +137,11 @@ class _texteState extends State<texte> {
                       child: ChoiceChip(
                         label: Text(t),
                         selected: _selectedType == t,
-                        selectedColor: orange,
+                        selectedColor: Theme.of(context).colorScheme.primary,
                         labelStyle: TextStyle(
-                          color: _selectedType == t ? Colors.white : Colors.black87,
+                          color: _selectedType == t
+                              ? Theme.of(context).colorScheme.onPrimary
+                              : Theme.of(context).colorScheme.onSurface,
                         ),
                         onSelected: (sel) {
                           _selectedType = sel ? t : null;
@@ -164,21 +167,11 @@ class _texteState extends State<texte> {
                       ),
                     );
                   },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.black.withOpacity(0.08),
-                            spreadRadius: 1.0,
-                            blurRadius: 10.0,
-                            offset: const Offset(0, 1))
-                      ],
-                    ),
+                  child: Card(
                     margin: const EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 5),
-                    padding: const EdgeInsets.all(10),
-                    child: Row(
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Row(
                       children: [
                         Container(
                           width: 40,
@@ -188,12 +181,12 @@ class _texteState extends State<texte> {
                             image: DecorationImage(image: _iconImage, fit: BoxFit.cover),
                           ),
                         ),
-                        Container(
-                          height: 30,
-                          width: 1.0,
-                          margin: const EdgeInsets.symmetric(horizontal: 10.0),
-                          decoration: BoxDecoration(color: Colors.grey.shade300),
-                        ),
+                          Container(
+                            height: 30,
+                            width: 1.0,
+                            margin: const EdgeInsets.symmetric(horizontal: 10.0),
+                            color: Theme.of(context).colorScheme.outlineVariant,
+                          ),
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -208,7 +201,7 @@ class _texteState extends State<texte> {
                               Text(
                                 cantique.typee.trim(),
                                 style: TextStyle(
-                                  color: textGrey,
+                                  color: Theme.of(context).colorScheme.onSurfaceVariant,
                                   fontSize: 12,
                                 ),
                               ),
@@ -218,9 +211,10 @@ class _texteState extends State<texte> {
                         Icon(
                           Iconsax.arrow_circle_right5,
                           size: 20,
-                          color: orange,
+                            color: Theme.of(context).colorScheme.primary,
                         )
                       ],
+                      ),
                     ),
                   ),
                 );

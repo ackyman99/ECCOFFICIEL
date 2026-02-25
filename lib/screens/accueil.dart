@@ -46,10 +46,10 @@ class _AccueilState extends State<Accueil> {
       ),
       bottomNavigationBar: FlashyTabBar(
         height: 55,
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         shadows: [
           BoxShadow(
-              color: Colors.black.withOpacity(0.10),
+              color: Theme.of(context).shadowColor.withOpacity(0.10),
               spreadRadius: 0.0,
               blurRadius: 20.0,
               offset: const Offset(0, 4))
@@ -63,7 +63,7 @@ class _AccueilState extends State<Accueil> {
         }),
         items: [
           FlashyTabBarItem(
-            activeColor: primaryBlue,
+            activeColor: Theme.of(context).colorScheme.primary,
             icon: const Icon(Iconsax.home, size: 25),
             title: const Text(
               'Accueil',
@@ -71,7 +71,7 @@ class _AccueilState extends State<Accueil> {
             ),
           ),
           FlashyTabBarItem(
-            activeColor: primaryBlue,
+            activeColor: Theme.of(context).colorScheme.primary,
             icon: const Icon(Iconsax.activity, size: 25),
             title: const Text(
               'Cantique',
@@ -79,7 +79,7 @@ class _AccueilState extends State<Accueil> {
             ),
           ),
           FlashyTabBarItem(
-            activeColor: primaryBlue,
+            activeColor: Theme.of(context).colorScheme.primary,
             icon: const Icon(Iconsax.document, size: 25),
             title: const Text(
               'Bible',
@@ -87,7 +87,7 @@ class _AccueilState extends State<Accueil> {
             ),
           ),
           FlashyTabBarItem(
-            activeColor: primaryBlue,
+            activeColor: Theme.of(context).colorScheme.primary,
             icon: const Icon(Iconsax.empty_wallet_tick, size: 25),
             title: const Text(
               'Programme',

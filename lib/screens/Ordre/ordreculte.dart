@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:eccofficiel/screens/Ordre/ordre_service.dart';
 import 'package:eccofficiel/models/ordre_culte.dart';
-import 'package:eccofficiel/theme.dart';
 import 'package:iconsax/iconsax.dart';
 
 class OrdreCultePage extends StatelessWidget {
@@ -42,11 +41,11 @@ class OrdreCultePage extends StatelessWidget {
                     const SizedBox(height: 8),
                     Row(
                       children: [
-                        const Icon(Iconsax.book_1, size: 16, color: Colors.black54),
+                        Icon(Iconsax.book_1, size: 16, color: Theme.of(context).colorScheme.onSurfaceVariant),
                         const SizedBox(width: 6),
                         Text(
                           data.language.toUpperCase(),
-                          style: TextStyle(color: textGrey, fontSize: 12),
+                          style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant, fontSize: 12),
                         ),
                       ],
                     ),
@@ -71,10 +70,7 @@ class OrdreCultePage extends StatelessWidget {
                         ),
                         if (s.ref != null) ...[
                           const SizedBox(width: 8),
-                          Text(
-                            '(${s.ref})',
-                            style: TextStyle(color: textGrey, fontSize: 12),
-                          ),
+                          Text('(${s.ref})', style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant, fontSize: 12)),
                         ]
                       ],
                     ),
@@ -116,7 +112,7 @@ class OrdreCultePage extends StatelessWidget {
                           padding: const EdgeInsets.only(bottom: 6),
                           child: Row(
                             children: [
-                              const Icon(Iconsax.blur, size: 16, color: Colors.black54),
+                              Icon(Iconsax.blur, size: 16, color: Theme.of(context).colorScheme.onSurfaceVariant),
                               const SizedBox(width: 8),
                               Expanded(
                                 child: Text(
@@ -193,8 +189,8 @@ class OrdreCultePage extends StatelessWidget {
                           padding: const EdgeInsets.only(bottom: 6),
                           child: RichText(
                             text: TextSpan(
-                              style: const TextStyle(
-                                color: Colors.black87,
+                              style: TextStyle(
+                                color: Theme.of(context).colorScheme.onSurface,
                                 fontSize: 15,
                                 height: 1.6,
                               ),

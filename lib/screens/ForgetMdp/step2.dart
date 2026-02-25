@@ -21,7 +21,6 @@ class _Step2State extends State<Step2> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.white,
       body: SafeArea(
         child:Container(
         decoration: const BoxDecoration(
@@ -59,21 +58,11 @@ class _Step2State extends State<Step2> {
 
 
 
-              Container(
+              Card(
                   margin: const EdgeInsets.all(2),
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                                BoxShadow(
-                                    // ignore: deprecated_member_use
-                                    color: Colors.black.withOpacity(0.10),
-                                    spreadRadius: 0.0,
-                                    blurRadius: 20.0,
-                                    offset:const Offset(0, 4))
-                              ],
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10.0)),
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
                       Form(
@@ -98,7 +87,7 @@ class _Step2State extends State<Step2> {
               ),
 
                CustomPrimaryButton(
-                    buttonColor: primaryBlue,
+                    buttonColor: Theme.of(context).colorScheme.primary,
                     textValue: 'Suivant',
                     textColor: Colors.white,
                     onPressed: () {
@@ -113,13 +102,14 @@ class _Step2State extends State<Step2> {
               ),
 
                      ],
-                  )),
+                  ),
+                  ),
               
              
              
               
               
-            ],
+          )],
           ),
         ),
       ),

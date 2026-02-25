@@ -10,9 +10,7 @@ class DoctrineEtFormeCultePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
         title: const Text('Doctrine et forme du culte'),
         centerTitle: true,
       ),
@@ -39,11 +37,11 @@ class DoctrineEtFormeCultePage extends StatelessWidget {
               const SizedBox(height: 6),
               Row(
                 children: [
-                  const Icon(Iconsax.book, size: 16, color: Colors.black54),
+                  Icon(Iconsax.book, size: 16, color: Theme.of(context).colorScheme.onSurfaceVariant),
                   const SizedBox(width: 6),
                   Text(
                     'Réf. ${data.reference}',
-                    style: TextStyle(color: textGrey, fontSize: 12),
+                    style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant, fontSize: 12),
                   ),
                 ],
               ),
@@ -58,8 +56,8 @@ class DoctrineEtFormeCultePage extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 14),
                   child: RichText(
                     text: TextSpan(
-                      style: const TextStyle(
-                        color: Colors.black87,
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.onSurface,
                         fontSize: 16,
                         height: 1.6,
                       ),

@@ -11,7 +11,6 @@ class BooksScreen extends StatelessWidget {
     final books = repo.getBooks();
 
     return Scaffold(
-      backgroundColor: Colors.white,
       body: ListView.builder(
         itemCount: books.length,
         itemBuilder: (_, i) => ListTile(

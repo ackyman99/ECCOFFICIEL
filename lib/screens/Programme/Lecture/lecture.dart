@@ -40,7 +40,6 @@ class _LecturepageState extends State<Lecturepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Column(
         children: [
           Padding(
@@ -71,21 +70,11 @@ class _LecturepageState extends State<Lecturepage> {
                         ),
                       );
           },
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black.withOpacity(0.08),
-                    spreadRadius: 1.0,
-                    blurRadius: 10.0,
-                    offset: Offset(0, 1))
-              ],
-            ),
+          child: Card(
             margin: EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 5),
-            padding: EdgeInsets.all(10),
-            child: Row(
+            child: Padding(
+              padding: EdgeInsets.all(10),
+              child: Row(
               children: [
                 Container(
                   width: 40,
@@ -101,7 +90,7 @@ class _LecturepageState extends State<Lecturepage> {
                   height: 30,
                   width: 1.0,
                   margin: EdgeInsets.symmetric(horizontal: 10.0),
-                  decoration: BoxDecoration(color: Colors.grey.shade300),
+                  color: Theme.of(context).colorScheme.outlineVariant,
                 ),
                 Expanded(
                   child: Column(
@@ -124,9 +113,10 @@ class _LecturepageState extends State<Lecturepage> {
                 Icon(
                   Iconsax.arrow_circle_right5,
                   size: 20,
-                  color: orange,
+                  color: Theme.of(context).colorScheme.primary,
                 )
               ],
+              ),
             ),
           ),
         );

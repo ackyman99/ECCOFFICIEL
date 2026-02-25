@@ -9,9 +9,7 @@ class HistoireFondationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
         title: const Text('Histoire de la Fondation'),
         centerTitle: true,
       ),
@@ -43,12 +41,12 @@ class HistoireFondationPage extends StatelessWidget {
                     const SizedBox(height: 8),
                     Text(
                       data.source,
-                      style: TextStyle(color: textGrey, fontSize: 13),
+                      style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant, fontSize: 13),
                     ),
                     const SizedBox(height: 4),
                     Text(
                       '${data.location} • ${data.date}',
-                      style: TextStyle(color: textGrey, fontSize: 12),
+                      style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant, fontSize: 12),
                     ),
                     const Divider(height: 24),
                   ],
@@ -59,8 +57,8 @@ class HistoireFondationPage extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 16),
                 child: RichText(
                   text: TextSpan(
-                    style: const TextStyle(
-                      color: Colors.black87,
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.onSurface,
                       fontSize: 16,
                       height: 1.6,
                     ),

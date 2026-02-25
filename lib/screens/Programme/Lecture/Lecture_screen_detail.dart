@@ -90,7 +90,7 @@ class _LectureSection extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.08),
+                  color: Theme.of(context).shadowColor.withOpacity(0.08),
                   spreadRadius: 1,
                   blurRadius: 10,
                   offset: const Offset(0, 1),
@@ -118,7 +118,7 @@ class _LectureSection extends StatelessWidget {
               child: AnimatedDefaultTextStyle(
                 duration: const Duration(milliseconds: 180),
                 curve: Curves.easeOutCubic,
-                style: TextStyle(fontSize: fontSize, height: 1.6, color: textBlack),
+                style: TextStyle(fontSize: fontSize, height: 1.6, color: Theme.of(context).colorScheme.onSurface),
                 child: Text(content),
               ),
             ),

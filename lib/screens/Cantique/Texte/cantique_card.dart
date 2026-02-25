@@ -25,10 +25,10 @@ class CantiqueCard extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       child: ListTile(
         leading: CircleAvatar(
-          backgroundColor: Colors.indigo,
+          backgroundColor: Theme.of(context).colorScheme.primary,
           child: Icon(
             _getIcon(cantique.icone),
-            color: Colors.white,
+            color: Theme.of(context).colorScheme.onPrimary,
           ),
         ),
         title: Text(

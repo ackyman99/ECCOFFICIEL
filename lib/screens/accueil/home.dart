@@ -28,7 +28,6 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
         body: LayoutBuilder(
           builder: (context, constraints) => SingleChildScrollView(
             child: Column(
@@ -84,164 +83,132 @@ class _HomeState extends State<Home> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
-                                              Container(
-                                                  height: 95,
-                                                  width: 95,
-                                                  margin: EdgeInsets.all(5),
-                                                  decoration: BoxDecoration(
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                            color: Colors.black
-                                                                // ignore: deprecated_member_use
-                                                                .withOpacity(
-                                                                    0.10),
-                                                            spreadRadius: 0.0,
-                                                            blurRadius: 20.0,
-                                                            offset:
-                                                                Offset(0, 4))
-                                                      ],
-                                                      color: Colors.white,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10)),
-                                                  padding:
-                                                      const EdgeInsets.all(10),
-                                                  child: Column(
-                                                    children: [
-                                                      Icon(Iconsax.music_playlist,
-                                                          color: orange,
-                                                          size: 20),
-                                                      const SizedBox(
-                                                          height: 10),
-                                                      const Align(
-                                                        alignment:
-                                                            Alignment.center,
-                                                        child: Text(
-                                                          "25",
-                                                          maxLines: 3,
-                                                          style: TextStyle(
-                                                            fontSize: 13,
-                                                            fontWeight: FontWeight.bold,
-                                                            color: bleuPlusclaire
+                                              SizedBox(
+                                                height: 95,
+                                                width: 95,
+                                                child: Card(
+                                                  margin: const EdgeInsets.all(5),
+                                                  child: Padding(
+                                                    padding: const EdgeInsets.all(10),
+                                                    child: Column(
+                                                      children: [
+                                                        Icon(Iconsax.music_playlist,
+                                                            color: Theme.of(context).colorScheme.primary,
+                                                            size: 20),
+                                                        const SizedBox(height: 10),
+                                                        Align(
+                                                          alignment: Alignment.center,
+                                                          child: Text(
+                                                            "25",
+                                                            maxLines: 3,
+                                                            style: TextStyle(
+                                                              fontSize: 13,
+                                                              fontWeight: FontWeight.bold,
+                                                              color: Theme.of(context).colorScheme.primary,
+                                                            ),
                                                           ),
                                                         ),
-                                                      ),
-                                                      Align(
-                                                        alignment: Alignment.center,
-                                                        child: Text(
-                                                          "Cantiques",
-                                                          maxLines: 2,
-                                                          style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold,color: textGrey),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              Container(
-                                                  height: 95,
-                                                  width: 95,
-                                                  margin: EdgeInsets.all(5),
-                                                  decoration: BoxDecoration(
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                            color: Colors.black
-                                                                .withOpacity(
-                                                                    0.10),
-                                                            spreadRadius: 0.0,
-                                                            blurRadius: 20.0,
-                                                            offset:
-                                                                Offset(0, 4))
-                                                      ],
-                                                      color: Colors.white,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10)),
-                                                  padding:
-                                                      const EdgeInsets.all(10),
-                                                  child: Column(
-                                                    children: [
-                                                      Icon(Icons.church_sharp,
-                                                          color: orange,
-                                                          size: 20),
-                                                      const SizedBox(
-                                                          height: 10),
-                                                      const Align(
-                                                        alignment:
-                                                            Alignment.center,
-                                                        child: Text(
-                                                          "250",
-                                                          maxLines: 3,
-                                                          style: TextStyle(
-                                                            fontSize: 13,
-                                                            fontWeight: FontWeight.bold,
-                                                            color: bleuPlusclaire
+                                                        Align(
+                                                          alignment: Alignment.center,
+                                                          child: Text(
+                                                            "Cantiques",
+                                                            maxLines: 2,
+                                                            style: TextStyle(
+                                                              fontSize: 10,
+                                                              fontWeight: FontWeight.bold,
+                                                              color: Theme.of(context).colorScheme.onSurfaceVariant,
+                                                            ),
                                                           ),
                                                         ),
-                                                      ),
-                                                      Align(
-                                                        alignment: Alignment.center,
-                                                        child: Text(
-                                                          "Paroisses",
-                                                          maxLines: 2,
-                                                          style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold,color: textGrey),
-                                                        ),
-                                                      ),
-                                                    ],
+                                                      ],
+                                                    ),
                                                   ),
                                                 ),
-
-                                                 Container(
-                                                  height: 95,
-                                                  width: 90,
-                                                  margin: EdgeInsets.all(5),
-                                                  decoration: BoxDecoration(
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                            color: Colors.black
-                                                                .withOpacity(
-                                                                    0.10),
-                                                            spreadRadius: 0.0,
-                                                            blurRadius: 20.0,
-                                                            offset:
-                                                                Offset(0, 4))
-                                                      ],
-                                                      color: Colors.white,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10)),
-                                                  padding:
-                                                      const EdgeInsets.all(10),
-                                                  child: Column(
-                                                    children: [
-                                                      Icon(Iconsax.bag_happy,
-                                                          color: orange,
-                                                          size: 20),
-                                                      const SizedBox(
-                                                          height: 10),
-                                                      const Align(
-                                                        alignment:
-                                                            Alignment.center,
-                                                        child: Text(
-                                                          "25",
-                                                          maxLines: 3,
-                                                          style: TextStyle(
-                                                            fontSize: 13,
-                                                            fontWeight: FontWeight.bold,
-                                                            color: bleuPlusclaire
+                                              ),
+                                              SizedBox(
+                                                height: 95,
+                                                width: 95,
+                                                child: Card(
+                                                  margin: const EdgeInsets.all(5),
+                                                  child: Padding(
+                                                    padding: const EdgeInsets.all(10),
+                                                    child: Column(
+                                                      children: [
+                                                        Icon(Icons.church_sharp,
+                                                            color: Theme.of(context).colorScheme.primary,
+                                                            size: 20),
+                                                        const SizedBox(height: 10),
+                                                        Align(
+                                                          alignment: Alignment.center,
+                                                          child: Text(
+                                                            "250",
+                                                            maxLines: 3,
+                                                            style: TextStyle(
+                                                              fontSize: 13,
+                                                              fontWeight: FontWeight.bold,
+                                                              color: Theme.of(context).colorScheme.primary,
+                                                            ),
                                                           ),
                                                         ),
-                                                      ),
-                                                      Align(
-                                                        alignment: Alignment.center,
-                                                        child: Text(
-                                                          "Moissons",
-                                                          maxLines: 2,
-                                                          style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold,color: textGrey),
+                                                        Align(
+                                                          alignment: Alignment.center,
+                                                          child: Text(
+                                                            "Paroisses",
+                                                            maxLines: 2,
+                                                            style: TextStyle(
+                                                              fontSize: 10,
+                                                              fontWeight: FontWeight.bold,
+                                                              color: Theme.of(context).colorScheme.onSurfaceVariant,
+                                                            ),
+                                                          ),
                                                         ),
-                                                      ),
-                                                    ],
+                                                      ],
+                                                    ),
                                                   ),
                                                 ),
+                                              ),
+                                              SizedBox(
+                                                height: 95,
+                                                width: 90,
+                                                child: Card(
+                                                  margin: const EdgeInsets.all(5),
+                                                  child: Padding(
+                                                    padding: const EdgeInsets.all(10),
+                                                    child: Column(
+                                                      children: [
+                                                        Icon(Iconsax.bag_happy,
+                                                            color: Theme.of(context).colorScheme.primary,
+                                                            size: 20),
+                                                        const SizedBox(height: 10),
+                                                        Align(
+                                                          alignment: Alignment.center,
+                                                          child: Text(
+                                                            "25",
+                                                            maxLines: 3,
+                                                            style: TextStyle(
+                                                              fontSize: 13,
+                                                              fontWeight: FontWeight.bold,
+                                                              color: Theme.of(context).colorScheme.primary,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Align(
+                                                          alignment: Alignment.center,
+                                                          child: Text(
+                                                            "Moissons",
+                                                            maxLines: 2,
+                                                            style: TextStyle(
+                                                              fontSize: 10,
+                                                              fontWeight: FontWeight.bold,
+                                                              color: Theme.of(context).colorScheme.onSurfaceVariant,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
                                             ],
                                           )
                                         ],

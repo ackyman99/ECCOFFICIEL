@@ -127,21 +127,8 @@ class _CarteScreenState extends State<CarteScreen> {
     return Center(
       child: AspectRatio(
         aspectRatio: 1.58,
-        child: Container(
+        child: Card(
           margin: const EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(16),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                blurRadius: 18,
-                spreadRadius: 1,
-                offset: const Offset(0, 6),
-              ),
-            ],
-            border: Border.all(color: Colors.black.withOpacity(0.08)),
-          ),
           child: Padding(
             padding: const EdgeInsets.all(16),
             child: Column(
@@ -188,45 +175,45 @@ class _CarteScreenState extends State<CarteScreen> {
                         width: 110,
                         height: double.infinity,
                         decoration: BoxDecoration(
-                          color: Colors.black12,
+                          color: Theme.of(context).colorScheme.surfaceVariant,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         alignment: Alignment.center,
-                        child: const Icon(Icons.person, size: 48, color: Colors.black45),
+                        child: Icon(Icons.person, size: 48, color: Theme.of(context).colorScheme.onSurfaceVariant),
                       ),
                       const SizedBox(width: 14),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            _kv('NOM', u.nom),
-                            _kv('Prénoms', u.prenoms),
+                            _kv(context, 'NOM', u.nom),
+                            _kv(context, 'Prénoms', u.prenoms),
                             Row(
                               children: [
-                                Expanded(child: _kv('SEXE', u.sexe)),
+                                Expanded(child: _kv(context, 'SEXE', u.sexe)),
                                 const SizedBox(width: 8),
-                                Expanded(child: _kv('Nationalité', u.nationalite)),
+                                Expanded(child: _kv(context, 'Nationalité', u.nationalite)),
                               ],
                             ),
                             Row(
                               children: [
-                                Expanded(child: _kv('Lieu de naissance', u.lieuNaissance)),
+                                Expanded(child: _kv(context, 'Lieu de naissance', u.lieuNaissance)),
                                 const SizedBox(width: 8),
-                                Expanded(child: _kv('Date de naiss.', u.dateNaissance)),
+                                Expanded(child: _kv(context, 'Date de naiss.', u.dateNaissance)),
                               ],
                             ),
                             Row(
                               children: [
-                                Expanded(child: _kv('Nom d’usage', u.nomUsage)),
+                                Expanded(child: _kv(context, 'Nom d’usage', u.nomUsage)),
                                 const SizedBox(width: 8),
-                                Expanded(child: _kv('N° du document', u.numeroDocument)),
+                                Expanded(child: _kv(context, 'N° du document', u.numeroDocument)),
                               ],
                             ),
                             Row(
                               children: [
-                                Expanded(child: _kv('Date d’expir.', u.dateExpiration)),
+                                Expanded(child: _kv(context, 'Date d’expir.', u.dateExpiration)),
                                 const SizedBox(width: 8),
-                                Expanded(child: _kv('Code', u.code)),
+                                Expanded(child: _kv(context, 'Code', u.code)),
                               ],
                             ),
                             const Spacer(),
@@ -238,7 +225,7 @@ class _CarteScreenState extends State<CarteScreen> {
                                   fontSize: 20,
                                   fontWeight: FontWeight.w500,
                                   fontFamily: 'monospace',
-                                  color: Colors.black.withOpacity(0.7),
+                                  color: Theme.of(context).colorScheme.onSurfaceVariant,
                                 ),
                               ),
                             ),
@@ -257,14 +244,14 @@ class _CarteScreenState extends State<CarteScreen> {
   }
 }
 
-Widget _kv(String k, String v) {
+Widget _kv(BuildContext context, String k, String v) {
   return Container(
     padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 10),
     margin: const EdgeInsets.only(bottom: 8),
     decoration: BoxDecoration(
-      color: const Color(0xFFF6F7FB),
+      color: Theme.of(context).colorScheme.surfaceVariant,
       borderRadius: BorderRadius.circular(8),
-      border: Border.all(color: Colors.black12),
+      border: Border.all(color: Theme.of(context).colorScheme.outlineVariant),
     ),
     child: Row(
       children: [
@@ -272,7 +259,7 @@ Widget _kv(String k, String v) {
           width: 120,
           child: Text(
             k,
-            style: const TextStyle(fontSize: 12, color: Colors.black54),
+            style: TextStyle(fontSize: 12, color: Theme.of(context).colorScheme.onSurfaceVariant),
           ),
         ),
         Expanded(

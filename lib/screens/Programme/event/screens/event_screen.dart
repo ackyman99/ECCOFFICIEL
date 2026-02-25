@@ -62,7 +62,6 @@ Color randomColor() {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Column(
         children: [
           Padding(
@@ -131,20 +130,10 @@ Color randomColor() {
                     ),
                     Expanded(
                       flex: 4,
-                      child: Container(
-                        decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(5),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black.withOpacity(0.08),
-                    spreadRadius: 1.0,
-                    blurRadius: 10.0,
-                    offset: Offset(0, 1))
-              ],
-            ),
-                        padding: const EdgeInsets.all(10),
-                        child: Column(
+                      child: Card(
+                        child: Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
@@ -227,6 +216,7 @@ Color randomColor() {
                                 ]),
                               ),
                             ]),
+                        ),
                       ),
                     ),
                   ],

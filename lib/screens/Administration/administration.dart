@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:eccofficiel/models/administration.dart';
 import 'package:eccofficiel/screens/Administration/administration_service.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:eccofficiel/theme.dart';
 
 class AdministrationPage extends StatelessWidget {
   const AdministrationPage({super.key});
@@ -42,11 +41,11 @@ class AdministrationPage extends StatelessWidget {
                     const SizedBox(height: 8),
                     Row(
                       children: [
-                        const Icon(Iconsax.document_text, size: 16, color: Colors.black54),
+                        Icon(Iconsax.document_text, size: 16, color: Theme.of(context).colorScheme.onSurfaceVariant),
                         const SizedBox(width: 6),
                         Text(
                           data.language.toUpperCase(),
-                          style: TextStyle(color: textGrey, fontSize: 12),
+                          style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant, fontSize: 12),
                         ),
                       ],
                     ),
@@ -72,10 +71,7 @@ class AdministrationPage extends StatelessWidget {
                           ),
                         ),
                         if (s.ref != null)
-                          Text(
-                            s.ref!,
-                            style: TextStyle(color: textGrey, fontSize: 12),
-                          ),
+                          Text(s.ref!, style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant, fontSize: 12)),
                       ],
                     ),
                     if (s.text != null && s.text!.isNotEmpty) ...[

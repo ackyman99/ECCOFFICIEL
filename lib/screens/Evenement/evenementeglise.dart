@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:eccofficiel/models/evenement_eglise.dart';
 import 'package:eccofficiel/screens/Evenement/evenement_service.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:eccofficiel/theme.dart';
 
 class EvenementEglisePage extends StatelessWidget {
   const EvenementEglisePage({super.key});
@@ -42,11 +41,11 @@ class EvenementEglisePage extends StatelessWidget {
                     const SizedBox(height: 8),
                     Row(
                       children: [
-                        const Icon(Iconsax.calendar_1, size: 16, color: Colors.black54),
+                        Icon(Iconsax.calendar_1, size: 16, color: Theme.of(context).colorScheme.onSurfaceVariant),
                         const SizedBox(width: 6),
                         Text(
                           data.language.toUpperCase(),
-                          style: TextStyle(color: textGrey, fontSize: 12),
+                          style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant, fontSize: 12),
                         ),
                       ],
                     ),
@@ -72,10 +71,7 @@ class EvenementEglisePage extends StatelessWidget {
                           ),
                         ),
                         if (s.ref != null)
-                          Text(
-                            s.ref!,
-                            style: TextStyle(color: textGrey, fontSize: 12),
-                          ),
+                          Text(s.ref!, style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant, fontSize: 12)),
                       ],
                     ),
                     if (s.text != null && s.text!.isNotEmpty) ...[
