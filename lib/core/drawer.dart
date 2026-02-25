@@ -56,6 +56,8 @@ class Navbar extends StatelessWidget {
               title: 'Accueil',
             ),
           ),
+
+          
            GestureDetector(
             onTap: () {
               Navigator.pop(context);

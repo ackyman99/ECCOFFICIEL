@@ -1,65 +1,65 @@
 [
   {
-    "typee": "Cantiques de Processions ",
+    "typee": "Cantiques de Processions",
     "numero": 1,
     "titre": "Jérimoyamah",
-    "cantique": "Jérimoyamah (2x) les anges sont dans la joie au ciel Les louanges chantent (2x) de vivent voix pour louer le Seigneur… Amen !",
+    "cantique": "Jérimoyamah (2x) les anges sont dans la joie au ciel\nLes louanges chantent (2x) de vivent voix pour louer le Seigneur… Amen !",
     "icone": "music_note"
   },
   {
-    "typee": "Cantiques de Processions ",
+    "typee": "Cantiques de Processions",
     "numero": 2,
     "titre": "Armées célestes",
-    "cantique": "Armées célestes, entrez puissamment Ariya, Ariya \n Armées célestes, descendez pour les Saint… Amen ! ",
+    "cantique": "Armées célestes, entrez puissamment Ariya, Ariya\nArmées célestes, descendez pour les Saint… Amen !",
     "icone": "library_music"
   },
-    {
-    "typee": "Cantiques de Processions ",
+  {
+    "typee": "Cantiques de Processions",
     "numero": 3,
     "titre": "Ouvrez, vous portes célestes",
-    "cantique": "Ouvrez, vous portes célestes (2x) portes célestes ouvrez-vous \n Et que le Roi de gloire entre … Amen ! ",
+    "cantique": "Ouvrez, vous portes célestes (2x) portes célestes ouvrez-vous\nEt que le Roi de gloire entre … Amen !",
     "icone": "library_music"
   },
-    {
-    "typee": "Cantiques de Processions ",
+  {
+    "typee": "Cantiques de Processions",
     "numero": 4,
-    "titre": "Ouvrez tes portes Seigneur ",
-    "cantique": "Ouvrez tes portes (2x) Seigneur, nous allons y entrer   \n Pour te louer, pour t’adorer Seigneur Jérimoyamah vient … Amen !   ",
+    "titre": "Ouvrez tes portes Seigneur",
+    "cantique": "Ouvrez tes portes (2x) Seigneur, nous allons y entrer\nPour te louer, pour t’adorer Seigneur Jérimoyamah vient … Amen !",
     "icone": "library_music"
   },
-    {
-    "typee": "Cantiques de Processions ",
+  {
+    "typee": "Cantiques de Processions",
     "numero": 5,
     "titre": "Nombreux sont ceux qui viennent",
-    "cantique": "Nombreux sont ceux qui viennent (2x) O Père Céleste   \n Fais-les entrer, nombreux sont ceux qui viennent … Amen !  ",
+    "cantique": "Nombreux sont ceux qui viennent (2x) O Père Céleste\nFais-les entrer, nombreux sont ceux qui viennent … Amen !",
     "icone": "library_music"
   },
-    {
-    "typee": "Cantiques de Processions ",
+  {
+    "typee": "Cantiques de Processions",
     "numero": 6,
-    "titre": "La cloche tinte gong, gong, gong  ",
-    "cantique": "La cloche tinte gong, gong, gong, n’ayez pas le cœur endurci \n Venez prier (2x) le Seigneur Jésus ; il tend ses bras et nous appelle \n Le Seigneur est à la porte priant pour nous ; c’est pour nous que la cloche tinte gong, gong, gong, … Amen ! ",
+    "titre": "La cloche tinte gong, gong, gong",
+    "cantique": "La cloche tinte gong, gong, gong, n’ayez pas le cœur endurci\nVenez prier (2x) le Seigneur Jésus ; il tend ses bras et nous appelle\nLe Seigneur est à la porte priant pour nous ; c’est pour nous que la cloche tinte gong, gong, gong, … Amen !",
     "icone": "library_music"
   },
-    {
-    "typee": "Cantiques de Processions ",
+  {
+    "typee": "Cantiques de Processions",
     "numero": 7,
-    "titre": "Joriya Hihou ",
-    "cantique": "Joriya Hihou (2x) L’Eternel est le Grand Roi (2x)  ",
+    "titre": "Joriya Hihou",
+    "cantique": "Joriya Hihou (2x) L’Eternel est le Grand Roi (2x)",
     "icone": "library_music"
   },
-    {
-    "typee": "Cantiques d’allumage des bougies ",
+  {
+    "typee": "Cantiques d’allumage des bougies",
     "numero": 8,
     "titre": "Yarah Sarah",
-    "cantique": "Yarah Sarah, Yarah Samantha (2x)  \n Allumez les lampes saintes des cieux … Amen ! ",
+    "cantique": "Yarah Sarah, Yarah Samantha (2x)\nAllumez les lampes saintes des cieux … Amen !",
     "icone": "library_music"
   },
-    {
+  {
     "typee": "Cantiques à genoux",
     "numero": 9,
     "titre": "Yarah man",
-    "cantique": "Yarah man hi Yarah man  \nYarah man yaman  Yarah man  \nAllons vers le Seigneur … Amen !  ",
+    "cantique": "Yarah man hi Yarah man\nYarah man yaman Yarah man\nAllons vers le Seigneur … Amen !",
     "icone": "library_music"
   }
 ]

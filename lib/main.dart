@@ -2,7 +2,6 @@ import 'package:eccofficiel/bible/bible_repository.dart';
 import 'package:eccofficiel/screens/Programme/event/core/timezone.dart';
 import 'package:eccofficiel/screens/Programme/event/screens/event_screen.dart';
 import 'package:eccofficiel/screens/Programme/event/services/event_service.dart';
-import 'package:eccofficiel/screens/Programme/Carte/carte.dart';
 import 'package:eccofficiel/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -49,9 +48,6 @@ class _MyAppState extends State<MyApp> {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: themeCtrl.themeMode,
-      routes: {
-        '/carte': (_) => const CarteScreen(),
-      },
       home: useEventEntry ? const EventScreen() : HomePage(repo: widget.repo),
     );
   } 
