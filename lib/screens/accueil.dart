@@ -39,7 +39,7 @@ class _AccueilState extends State<Accueil> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Navbar(),
+      drawer: Navbar(repo: widget.repo),
       appBar: appBar(),
       body: Center(
         child: tabItems[_selectedIndex],

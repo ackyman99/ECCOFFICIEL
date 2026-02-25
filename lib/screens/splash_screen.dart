@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    _bgImage = const AssetImage('assets/images/background2.png');
+    _bgImage = const AssetImage('assets/images/3.jpg');
   }
 
   @override

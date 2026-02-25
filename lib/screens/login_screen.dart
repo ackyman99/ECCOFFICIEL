@@ -36,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
     super.initState();
-    _bgImage = const AssetImage("assets/images/background2.png");
+    _bgImage = const AssetImage("assets/images/4.jpg");
     _accentImage = const AssetImage("assets/images/accent.png");
   }
 

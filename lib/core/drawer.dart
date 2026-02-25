@@ -1,4 +1,6 @@
 import 'package:eccofficiel/theme.dart';
+import 'package:eccofficiel/bible/bible_repository.dart';
+import 'package:eccofficiel/screens/login_screen.dart';
 import 'package:eccofficiel/screens/Histoire/histoireFondation.dart';
 import 'package:eccofficiel/screens/Doctrine/doctrineetformeculte.dart';
 import 'package:eccofficiel/screens/Ordre/ordreculte.dart';
@@ -11,7 +13,8 @@ import 'package:provider/provider.dart';
 import 'package:eccofficiel/core/theme_controller.dart';
 
 class Navbar extends StatelessWidget {
-  const Navbar({super.key});
+  final BibleRepository repo;
+  const Navbar({super.key, required this.repo});
 
   @override
   Widget build(BuildContext context) {
@@ -173,6 +176,21 @@ class Navbar extends StatelessWidget {
               ],
             ),
             onTap: () {},
+          ),
+          ListTile(
+            leading: Icon(Icons.logout, color: Theme.of(context).colorScheme.error),
+            title: Text('Déconnexion', style: TextStyle(color: Theme.of(context).colorScheme.error)),
+            onTap: () async {
+              Navigator.pop(context);
+              await Future.delayed(const Duration(milliseconds: 120));
+              // Réinitialise la navigation et revient à l'écran de connexion
+              // en conservant l'instance de repository.
+              // ignore: use_build_context_synchronously
+              Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(builder: (_) => LoginScreen(repo: repo)),
+                (route) => false,
+              );
+            },
           ),
 
         ],
