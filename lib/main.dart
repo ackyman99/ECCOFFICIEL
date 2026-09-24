@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:eccofficiel/core/theme_controller.dart';
 import 'package:eccofficiel/core/app_theme.dart';
-void main() async {
+void main() async { 
   WidgetsFlutterBinding.ensureInitialized();
   await setupLocalTimezone();
   final bibleRepo = BibleRepository();
