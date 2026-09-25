@@ -8,7 +8,8 @@ class SearchHelper {
     return list.where((c) {
       return c.numero.toString().contains(q) ||
           c.titre.toLowerCase().contains(q) ||
-          c.cantique.toLowerCase().contains(q);
+          c.texte.toLowerCase().contains(q) ||
+          c.reference.toLowerCase().contains(q);
     }).toList();
   }
 }

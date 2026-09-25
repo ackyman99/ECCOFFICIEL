@@ -30,7 +30,7 @@ class _CantiqueDetailScreenState extends State<CantiqueDetailScreen> {
           IconButton(
             icon: const Icon(Icons.copy_all_outlined),
             onPressed: () async {
-              await Clipboard.setData(ClipboardData(text: widget.cantique.cantique));
+              await Clipboard.setData(ClipboardData(text: widget.cantique.texte));
               if (!mounted) return;
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: const Text('Texte copié'), behavior: SnackBarBehavior.floating),
@@ -52,10 +52,21 @@ class _CantiqueDetailScreenState extends State<CantiqueDetailScreen> {
             runSpacing: 8,
             children: [
               Chip(
-                label: Text(widget.cantique.typee.trim()),
+                label: Text(widget.cantique.type.trim()),
                 backgroundColor: Theme.of(context).colorScheme.surfaceVariant,
                 labelStyle: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
               ),
+              if (widget.cantique.reference.isNotEmpty)
+                Chip(
+                  label: Text(widget.cantique.reference),
+                  backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                  labelStyle: TextStyle(color: Theme.of(context).colorScheme.onPrimaryContainer),
+                ),
+              if (widget.cantique.mp3.isNotEmpty)
+                Chip(
+                  avatar: Icon(Icons.audiotrack, size: 16, color: Theme.of(context).colorScheme.primary),
+                  label: const Text('Audio disponible'),
+                ),
             ],
           ),
           const SizedBox(height: 12),
@@ -63,7 +74,7 @@ class _CantiqueDetailScreenState extends State<CantiqueDetailScreen> {
             child: Padding(
               padding: const EdgeInsets.fromLTRB(16, 16, 16, 20),
               child: SelectableText(
-                widget.cantique.cantique,
+                widget.cantique.texte,
                 textAlign: TextAlign.justify,
                 style: TextStyle(fontSize: _fontSize, height: 1.6),
               ),

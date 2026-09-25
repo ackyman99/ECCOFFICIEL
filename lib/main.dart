@@ -7,11 +7,17 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:eccofficiel/core/theme_controller.dart';
 import 'package:eccofficiel/core/app_theme.dart';
+import 'package:firebase_core/firebase_core.dart';
+
 void main() async { 
   WidgetsFlutterBinding.ensureInitialized();
   await setupLocalTimezone();
   final bibleRepo = BibleRepository();
   await bibleRepo.init();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(
     ChangeNotifierProvider(
       create: (_) => ThemeController()..load(),

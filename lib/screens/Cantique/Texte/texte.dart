@@ -52,7 +52,7 @@ class _texteState extends State<texte> {
     final seen = <String>{};
     _types.clear();
     for (final c in _all) {
-      final t = c.typee.trim();
+      final t = c.type.trim();
       if (seen.add(t)) {
         _types.add(t);
       }
@@ -69,9 +69,10 @@ class _texteState extends State<texte> {
             ? true
             : c.titre.toLowerCase().contains(q) ||
                 c.numero.toString().contains(_query) ||
-                c.typee.toLowerCase().contains(q);
+                c.type.toLowerCase().contains(q) ||
+                c.reference.toLowerCase().contains(q);
         final matchesType =
-            selected == null ? true : c.typee.trim() == selected;
+            selected == null ? true : c.type.trim() == selected;
         return matchesQuery && matchesType;
       }).toList();
     });
@@ -192,14 +193,21 @@ class _texteState extends State<texte> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Row(children: [
-                                Text(
-                                  cantique.titre,
-                                  style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                                Expanded(
+                                  child: Text(
+                                    cantique.titre,
+                                    style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                                  ),
                                 ),
+                                if (cantique.mp3.isNotEmpty)
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 4),
+                                    child: Icon(Icons.audiotrack, size: 14, color: Theme.of(context).colorScheme.primary),
+                                  ),
                               ]),
-                              Text("Cantique n° ${cantique.numero}"),
+                              Text("Cantique n° ${cantique.numero}${cantique.reference.isNotEmpty ? ' - ${cantique.reference}' : ''}"),
                               Text(
-                                cantique.typee.trim(),
+                                cantique.type.trim(),
                                 style: TextStyle(
                                   color: Theme.of(context).colorScheme.onSurfaceVariant,
                                   fontSize: 12,

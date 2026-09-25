@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1038950454706",
+    "project_id": "eccapp-d957a",
+    "storage_bucket": "eccapp-d957a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1038950454706:android:9ec495349ae82d856000ab",
+        "android_client_info": {
+          "package_name": "com.example.eccofficiel"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbIOPYSWXHmH6QHkRrZ-kpOqjqOAgpx1g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

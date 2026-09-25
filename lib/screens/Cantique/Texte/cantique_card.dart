@@ -36,7 +36,7 @@ class CantiqueCard extends StatelessWidget {
           style: const TextStyle(fontWeight: FontWeight.bold),
         ),
         subtitle: Text(
-          cantique.cantique,
+          cantique.texte,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
         ),
